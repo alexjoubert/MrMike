@@ -11,7 +11,7 @@ public class GameDataScript : MonoBehaviour {
 	static public string LevelName = "GameScene";	
 	static public int CurrentHealth = 3;
 	static public bool GameStart = false;
-	static public int CurrentScore;
+	static int CurrentScore;
 	static public int HighScore;
 	
 	public OnGUI2D onGUI2D;
@@ -64,7 +64,12 @@ public class GameDataScript : MonoBehaviour {
 
 	//Loads the next level
 	public void LoadNextLevel(){
-		Application.LoadLevel(LevelName + CurrentLevel);
+		if (CurrentLevel < FinalLevel) {
+			Debug.Log (CurrentLevel);
+			Application.LoadLevel (LevelName + CurrentLevel);
+		} else {
+			Application.LoadLevel ("MainMenu");
+		}
 		
 	}
 
@@ -72,7 +77,8 @@ public class GameDataScript : MonoBehaviour {
 	public void resetCurrentLevel(){
 		GameStart = true;
 		CurrentLevel = 0;
-		CurrentScore = 0;
+		PlayerPrefs.SetInt ("CurrentScore", 0);
+		PlayerPrefs.SetInt ("HighScore", 0);
 
 	}
 
@@ -109,7 +115,7 @@ public class GameDataScript : MonoBehaviour {
 	public int getCurrentScore(){
 		return CurrentScore;}
 
-	public void addCurrentScore(int x){
+	public void addCurrentScore(){
 		CurrentScore += onGUI2D.getScore ();
 	}
 

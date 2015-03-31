@@ -13,24 +13,20 @@ public class NextLevelScript : MonoBehaviour {
 
 	//When player reaches end of level, load next level
 	void OnTriggerEnter2D(Collider2D other){
+		PlayerPrefs.SetInt ("CurrentScore", gameDataScript.getCurrentScore ());
 		if (!first) {
 			UpdateLevel ();	//CurrentLevel++
-			Debug.Log (gameDataScript.getAllLevelsComplete ());
-			if (!gameDataScript.getAllLevelsComplete ()) {
-
-				Application.LoadLevel ("LevelComplete");}
-
 
 			//When All Levels Complete, return to Main Menu
-			else {
-				Debug.Log ("Should be here.");
-				gameDataScript.setGameStart(false);
-				Application.LoadLevel ("MainMenu");}
-				} 
+			if (gameDataScript.getAllLevelsComplete ()) {
 
-		else {
+				gameDataScript.setGameStart (false);
+			}
+
+			Application.LoadLevel ("LevelComplete");				
+		} else {
 			first = false;
-		}
+			}
 	}
 
 	void UpdateLevel(){

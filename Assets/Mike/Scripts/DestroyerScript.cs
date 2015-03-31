@@ -5,7 +5,7 @@ public class DestroyerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
-			Debug.Break();
+			Application.LoadLevel ("DeathScene");
 			return;}
 		if(other.gameObject.transform.parent){
 			Destroy(other.gameObject.transform.parent.gameObject);
