@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class NextLevelScript : MonoBehaviour {
-
+	
 	public GameDataScript gameDataScript;
 	public GameStatus gameStatus;
 	public bool first;					//Temporary fix to bug that causes collision function to run twice.

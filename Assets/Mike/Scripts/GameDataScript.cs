@@ -13,6 +13,7 @@ public class GameDataScript : MonoBehaviour {
 	static public bool GameStart = false;
 	static int CurrentScore;
 	static public int HighScore;
+	static public bool PlayerShield;
 	
 	public OnGUI2D onGUI2D;
 
@@ -20,6 +21,7 @@ public class GameDataScript : MonoBehaviour {
 	void Start(){
 		AllLevelsComplete = false;
 		CurrentScore = 0;
+		PlayerShield = false;
 	}
 
 	//Ensures script is not destroyed when switching scenes
@@ -79,6 +81,7 @@ public class GameDataScript : MonoBehaviour {
 		CurrentLevel = 0;
 		PlayerPrefs.SetInt ("CurrentScore", 0);
 		PlayerPrefs.SetInt ("HighScore", 0);
+		PlayerShield = false;
 
 	}
 
@@ -100,6 +103,7 @@ public class GameDataScript : MonoBehaviour {
 		Application.LoadLevel (LevelName + CurrentLevel);
 	}
 
+	//updates high score
 	public void UpdateHighScore(){
 
 		if (CurrentScore > HighScore) {
@@ -108,15 +112,34 @@ public class GameDataScript : MonoBehaviour {
 
 	}
 
+	//returns high score
 	public int getHighScore(){
 		return HighScore;
 	}
 
+	//returns current score
 	public int getCurrentScore(){
 		return CurrentScore;}
 
+	//Adds scene score to current score
 	public void addCurrentScore(){
 		CurrentScore += onGUI2D.getScore ();
+	}
+
+	//Accessor method for Player Shield
+	public bool getPlayerShield(){
+			Debug.Log ("GD: PlayerShield: " + PlayerShield);
+		return PlayerShield;
+	}
+
+	//Turns player shield on
+	public void enablePlayerShield(){
+		PlayerShield = true;
+	}
+
+	//Turns player shield off
+	public void disablePlayerShield(){
+		PlayerShield = false;
 	}
 
 

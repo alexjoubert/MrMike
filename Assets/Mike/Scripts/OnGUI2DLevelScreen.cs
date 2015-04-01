@@ -14,7 +14,7 @@ public class OnGUI2DLevelScreen : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		Debug.Log ("OnGUI2D: " + Score);
+		//Debug.Log ("OnGUI2D: " + Score);
 		//Display Score on Upper-Left Corner of Game Screen
 		GUI.Label (new Rect (550, 307, 100, 20), "" + Score);
 

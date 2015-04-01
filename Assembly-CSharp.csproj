@@ -50,12 +50,15 @@
      <Compile Include="Assets\Mike\Scripts\CameraFollowScript.cs" />
      <Compile Include="Assets\Mike\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Mike\Scripts\DestroyerScript.cs" />
+     <Compile Include="Assets\Mike\Scripts\EnemyControllerScript.cs" />
      <Compile Include="Assets\Mike\Scripts\GameDataScript.cs" />
      <Compile Include="Assets\Mike\Scripts\GameStatus.cs" />
      <Compile Include="Assets\Mike\Scripts\LoadDeathScript.cs" />
      <Compile Include="Assets\Mike\Scripts\NextLevelScript.cs" />
      <Compile Include="Assets\Mike\Scripts\OnGUI2D.cs" />
      <Compile Include="Assets\Mike\Scripts\OnGUI2DLevelScreen.cs" />
+     <Compile Include="Assets\Mike\Scripts\Platformer2DEnemyBehaviour.cs" />
+     <Compile Include="Assets\Mike\Scripts\PowerUpScript.cs" />
      <Compile Include="Assets\Mike\Scripts\ProceedToNextLevelScript.cs" />
      <Compile Include="Assets\Mike\Scripts\RestartScript.cs" />
      <Compile Include="Assets\Mike\Scripts\SpawnScript.cs" />
