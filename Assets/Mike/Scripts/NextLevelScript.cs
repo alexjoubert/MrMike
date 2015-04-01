@@ -29,12 +29,12 @@ public class NextLevelScript : MonoBehaviour {
 			}
 	}
 
+	//Load next level if not final level
 	void UpdateLevel(){
 		gameDataScript.setCurrentLevel (gameDataScript.getCurrentLevel () + 1);
 
 		if(gameDataScript.getCurrentLevel()==gameDataScript.getFinalLevel()){
 			gameDataScript.setAllLevelsComplete(true);
-			Debug.Log ("After update: " + gameDataScript.getAllLevelsComplete());
 		}
 
 	}

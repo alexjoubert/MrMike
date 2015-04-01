@@ -8,6 +8,7 @@ public class EnemyControllerScript : MonoBehaviour {
 	bool first;
 
 	void Start(){
+		//Grab game data
 		manager = GameObject.FindGameObjectWithTag ("GameController");
 		gameDataScript = manager.GetComponent<GameDataScript> ();
 		first = true;
@@ -21,17 +22,16 @@ public class EnemyControllerScript : MonoBehaviour {
 	
 	}
 
-	//Patch for bug where collisions detecting twice
+	//first flag is patch for bug where collisions detecting twice
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log (other.tag);
+		//Only collide with Player
 		if (other.tag == "Player") {
-			Debug.Log ("EC: PlayerShield: " + gameDataScript.getPlayerShield ());
 
 			if (!first) {
-					Debug.Log ("Show up");
-
+				//if shield is up, disable shield
 				if (gameDataScript.getPlayerShield ()) {
 					gameDataScript.disablePlayerShield ();
+					Destroy (this.gameObject);
 				} else {
 					Application.LoadLevel ("DeathScene");
 				}

@@ -10,21 +10,20 @@ public class OnGUI2D : MonoBehaviour {
 	void Start () {
 		//Initialize Score to 0.
 		Score = 0;
-	
 	}
 
 	void OnGUI(){
-			//Display Score on Upper-Left Corner of Game Screen
-			GUI.Label (new Rect (10, 10, 100, 20), "Score: " + Score);
-			//Debug.Log (Score);
+		GUI.Label (new Rect (10, 10, 100, 20), "Score: " + Score);	//Displays current score on to screen.
 	}
 
 	public void Update(){
-		Score++;
+		Score++;	//Score++ per frame
 	}
 
+	//Accessor Method for score
 	public int getScore(){
 		return Score;
 	}
+	
 
 }

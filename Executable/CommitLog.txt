@@ -1,0 +1,4 @@
+15:00 Mar 31, 2015: First Commit
+18:00 Mar 31, 2015: Add Death Scene
+1:00 Apr 1, 2015: Added Enemy Placeholder. Added buggy powerups.
+11:00 Apr 1, 2015: Fixed Powerups, Fixed Camera Angle, Added Executables, CommitLog.txt and HowToBuild.txt

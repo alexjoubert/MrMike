@@ -27,3 +27,5 @@ EditorBuildSettings:
     path: Assets/Mike/Scenes/SaveGameScene.unity
   - enabled: 1
     path: Assets/Mike/Scenes/DeathScene.unity
+  - enabled: 1
+    path: Assets/Mike/Scenes/SettingsScene.unity

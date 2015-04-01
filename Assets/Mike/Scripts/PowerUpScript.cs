@@ -5,7 +5,8 @@ public class PowerUpScript : MonoBehaviour {
 	
 	public GameObject manager;
 	public GameDataScript gameDataScript;
-	
+
+	//Grab game data
 	void Start(){
 		manager = GameObject.FindGameObjectWithTag ("GameController");
 		gameDataScript = manager.GetComponent<GameDataScript> ();
@@ -14,16 +15,10 @@ public class PowerUpScript : MonoBehaviour {
 
 	//Patch for bug where collisions detecting twice
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log (other.tag);
+		//if player grabs powerup, enable shield
 		if (other.tag == "Player") {
-			Debug.Log ("PU: PlayerShield: " + gameDataScript.getPlayerShield ());
-					
 			gameDataScript.enablePlayerShield ();
-			Debug.Log ("PU after: PlayerShield: " + gameDataScript.getPlayerShield ());
-					
-					//Destroy (this);
-			
-
+			Destroy (this.gameObject);
 		}
 		
 	}

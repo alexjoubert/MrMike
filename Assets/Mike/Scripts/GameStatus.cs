@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Currently not in use. Was meant to optimize game flow
 public class GameStatus : MonoBehaviour {
 
 	GameDataScript gameDataScript;
