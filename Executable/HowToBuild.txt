@@ -8,4 +8,10 @@ For Unity:
  Store all files in folder F. 
  In Unity, select "Open Project", and select folder F.
 
+How to Play:
+ Spacebar to Jump.
+ Purple sphere is a powerup that gives you a shield.
+ Yellow boxes are obstacles and should be avoided.
+ Blue boxes are enemy placeholder and should be avoided.
+
 Warning: Tested on Linux version.
